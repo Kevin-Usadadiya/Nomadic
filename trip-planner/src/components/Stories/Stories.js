@@ -50,7 +50,7 @@ function Stories() {
       setImgStyle("none");
     }
   }
-
+  axios.defaults.withCredentials = true;
   useEffect(()=>{
     axios.get("https://trip-planner-api-rust.vercel.app/getstories")
     .then(response => {setCards(response.data)})
