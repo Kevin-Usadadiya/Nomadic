@@ -12,7 +12,7 @@ const app = express()
 app.use(cors(
     {
 
-        origin : ['https://trip-planner-neon.vercel.app'],
+        origin : ['https://trip-planner-api-rust.vercel.app'],
         methods : ['POST', 'GET'],
         credentials : true
     }
