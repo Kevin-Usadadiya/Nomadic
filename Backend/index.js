@@ -10,9 +10,12 @@ const PlannerModel = require("./models/planner.js");
 const app = express()
 
 app.use(cors(
-    origin : ['https://trip-planner-neon.vercel.app'],
-    methods : ['POST', 'GET'],
-    credentials : true
+    {
+
+        origin : ['https://trip-planner-neon.vercel.app'],
+        methods : ['POST', 'GET'],
+        credentials : true
+    }
 ))
 app.use(express.json())
 
