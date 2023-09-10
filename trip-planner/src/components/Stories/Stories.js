@@ -52,7 +52,7 @@ function Stories() {
   }
   axios.defaults.withCredentials = true;
   useEffect(()=>{
-    axios.get("https://trip-planner-api-rust.vercel.app/getstories")
+    axios.get("http://localhost:3001/getstories")
     .then(response => {setCards(response.data)})
     .catch(error => {console.error('Error fetching data:', error);})
     
