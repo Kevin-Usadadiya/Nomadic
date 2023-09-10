@@ -7,7 +7,7 @@ const HomeModel = require("./models/home.js")
 const StoriesModel = require("./models/stories.js");
 const PlannerModel = require("./models/planner.js");
 
-
+require("dotenv").config();
 
 app.use(cors(
     {
@@ -22,7 +22,7 @@ app.use(express.json())
 
 // mongoose.connect("mongodb://127.0.0.1:27017/Trip-Planner")
 
-mongoose.connect(process.env.MONGODB_URI)
+ mongoose.connect("mongodb+srv://explorenomadictrips:SRKS2003@cluster0.lu4bqm2.mongodb.net/Trip-Planner?retryWrites=true&w=majority")
 
 
 
