@@ -1,3 +1,5 @@
 .vercel
 
 /Backend/node_modules
+
+/Backend/.env

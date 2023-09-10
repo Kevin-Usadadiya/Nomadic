@@ -1,4 +1,5 @@
 const express = require("express");
+const app = express()
 const mongoose = require("mongoose");
 const cors = require("cors")
 const ToursModel = require("./models/tours.js")
@@ -7,7 +8,6 @@ const StoriesModel = require("./models/stories.js");
 const PlannerModel = require("./models/planner.js");
 
 
-const app = express()
 
 app.use(cors(
     {
