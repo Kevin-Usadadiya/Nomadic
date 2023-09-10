@@ -24,7 +24,9 @@ app.use(express.json())
 
 mongoose.connect("mongodb+srv://explorenomadictrips:SRKS2003@cluster0.lu4bqm2.mongodb.net/Trip-Planner?retryWrites=true&w=majority")
 
-
+app.get("/",(req,res)=>{
+    res.json("hello")
+})
 
 app.get("/gettours", (req,res)=>{
     ToursModel.find()
