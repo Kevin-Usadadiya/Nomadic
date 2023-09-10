@@ -1,8 +1,9 @@
 // once you click budget button the page will reload check that and you need to click twice for budget.
 import React, { useEffect, useState } from "react";
+
 import form_svg from "./form.svg";
 import payment_svg from "./payment.svg";
-import { Link} from "react-router-dom";
+
 import axios from "axios";
 import jsPDF from "jspdf";
 
@@ -17,9 +18,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { parseISO } from "date-fns";
 
-
-function Form(props) {
-  
+function Form() {
   const [isSubmitMode, setisSubmitMode] = useState(false);
   const [day1, setDay1] = useState([]);
   const [day2, setDay2] = useState([]);
@@ -116,20 +115,18 @@ function Form(props) {
     // Send POST request to server with the cityname
     // let ct = formdata.cityname
     // let ctname = ct.toLowerCase()
-   axios.post("http://localhost:3001/getplanner", { cityname })
-          .then((response) => {
-            const { cityname, Day1, Day2, Day3 } = response.data;
-            setDay1(Day1);
-            setDay2(Day2);
-            setDay3(Day3);
-            // setCity(cityname);
-          })
-          .catch((err) => console.log(err));
-    
-        handleProceedClick()
-        
-        
-   
+    axios
+      .post("http://localhost:3001/getplanner", { cityname })
+      .then((response) => {
+        const { cityname, Day1, Day2, Day3 } = response.data;
+        setDay1(Day1);
+        setDay2(Day2);
+        setDay3(Day3);
+        // setCity(cityname);
+      })
+      .catch((err) => console.log(err));
+
+    handleProceedClick()
   };
 
 
@@ -147,9 +144,7 @@ function Form(props) {
       setShowcustombtn(false);
       setShowpdfbtn(true);
     }
-
   };
-   //=====================================Function of customize button, to redirect it into planner section=====================================//
 
   // ============================= PDF GENERATION CODE ============================================================================//
   const generatePDF = () => {
@@ -407,7 +402,7 @@ function Form(props) {
                 )}
 
                 {showcustombtn && (
-                 <Link to='/planner'> <button className="form_btn">Customize</button></Link>
+                  <button className="form_btn">Customize</button>
                 )}
               </span>
               <br />
@@ -483,8 +478,6 @@ function Form(props) {
           </div>
         </div>
       </div>
-
-
     </>
   );
 }

@@ -8,7 +8,7 @@ import 'swiper/css/navigation';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
 function Tours() {
-  const [tours_data, setToursData] = useState([])
+  const [tours_data, setToursData] = useState([]);
   const [reviewData, setReviewData] = useState([]);
  
   useEffect(()=>{

@@ -67,7 +67,7 @@ function Stories() {
   return (
     <div className="stories_body">
       <div>
-        <section>
+        <section className="stories_body_section">
           <div className="stories_main_container">
 
             <div className="famous_places">
