@@ -2,7 +2,7 @@ const express = require("express");
 const app = express()
 const mongoose = require("mongoose");
 const cors = require("cors")
-const ToursModel = require("./models/tours.js")
+const ToursModel = require("./models/Tours.js")
 const HomeModel = require("./models/home.js")
 const StoriesModel = require("./models/stories.js");
 const PlannerModel = require("./models/planner.js");
@@ -25,9 +25,6 @@ app.use(express.json())
  mongoose.connect("mongodb+srv://explorenomadictrips:SRKS2003@cluster0.lu4bqm2.mongodb.net/Trip-Planner?retryWrites=true&w=majority")
 
 
-app.get("/",(req,res)=>{
-    res.json("Helloe")
-})
 
 app.get("/gettours", (req,res)=>{
     ToursModel.find()
