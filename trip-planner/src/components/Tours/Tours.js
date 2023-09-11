@@ -12,11 +12,11 @@ function Tours() {
   const [reviewData, setReviewData] = useState([]);
  
   useEffect(()=>{
-      axios.get('http://localhost:3001/gettours')
+      axios.get('https://trip-planner-iq8f.vercel.app/gettours')
       .then(tours_data => setToursData(tours_data.data))
       .catch(err=>console.log(err))
 
-      axios.get('http://localhost:3001/gethomes')
+      axios.get('https://trip-planner-iq8f.vercel.app/gethomes')
       .then(response => {
         const { reviewData } = response.data;
         setReviewData(reviewData);
