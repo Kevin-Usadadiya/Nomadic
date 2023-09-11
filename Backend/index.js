@@ -12,7 +12,7 @@ require("dotenv").config();
 app.use(cors(
     {
 
-        origin : ['https://trip-planner-neon.vercel.app'],
+        origin : ['https://nomadics.vercel.app'],
         methods : ['POST', 'GET'],
         credentials : true
     }
