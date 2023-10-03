@@ -116,6 +116,7 @@ function Form(props) {
     // Send POST request to server with the cityname
     // let ct = formdata.cityname
     // let ctname = ct.toLowerCase()
+  //  axios.post("http://localhost:3001/getplanner", { cityname })
    axios.post("https://trip-planner-iq8f.vercel.app/getplanner", { cityname })
           .then((response) => {
             const { cityname, Day1, Day2, Day3 } = response.data;
@@ -274,7 +275,11 @@ function Form(props) {
                   type="text"
                   placeholder="City Name"
                   name="cityname"
-                  onChange={(e) => setCityname(e.target.value)}
+
+                  // edited by sac
+                  onChange={(e) => setCityname(e.target.value.toLowerCase())}
+                  // edited by sac
+                  
                   required
                 />
               </div>
@@ -407,7 +412,11 @@ function Form(props) {
                 )}
 
                 {showcustombtn && (
-                 <Link to='/planner'> <button className="form_btn">Customize</button></Link>
+  // edited by sac
+
+                 <Link to={`/planner?data=${cityname}`}> <button className="form_btn">Customize</button></Link>
+  // edited by sac
+
                 )}
               </span>
               <br />
@@ -433,9 +442,13 @@ function Form(props) {
                     </span>
                     <span>
                       <i class="fas fa-sharp fa-regular fa-money-bills"></i>
-                      <strong>Total Budget:{" "}
+                      <strong>Total Budget:{" "} 
                       <i class="fas fa-sharp fa-regular fa-indian-rupee-sign"></i>
-                      {budget}</strong>
+
+{/* edited by sac  */}
+                      {budget} ( per day per person )</strong>
+{/* edited by sac ends */}
+
                     </span>
                   </span>
                 )}

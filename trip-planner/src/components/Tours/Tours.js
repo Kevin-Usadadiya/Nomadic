@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import {Link} from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import axios from 'axios'
 import './Tours.css'
@@ -12,10 +13,12 @@ function Tours() {
   const [reviewData, setReviewData] = useState([]);
  
   useEffect(()=>{
-      axios.get('https://trip-planner-iq8f.vercel.app/gettours')
+    // axios.get('http://localhost:3001/gettours')
+    axios.get('https://trip-planner-iq8f.vercel.app/gettours')
       .then(tours_data => setToursData(tours_data.data))
       .catch(err=>console.log(err))
 
+      // axios.get('http://localhost:3001/gethomes')
       axios.get('https://trip-planner-iq8f.vercel.app/gethomes')
       .then(response => {
         const { reviewData } = response.data;
@@ -95,9 +98,13 @@ function Tours() {
 
                               </div>
                               <div className='tour_main_card_utils' key={data.title}>
-                                <button className='tour_main_card_button'>
-                                 Read More</button>
-                                <button className='tour_main_card_button'>Book Now</button>
+                                <Link to={`/blogs/${encodeURIComponent(data.title)}`}>
+                                    <button className='tour_main_card_button'>
+                                    Read More</button>
+                                </Link>
+                                <Link to='/form' className='tour_main_card_button' >Book Now</Link>
+
+                                {/* <button className='tour_main_card_button'>Book Now</button> */}
                               </div>
                               {/* <ul style={{display: 'flex'}}>
                                 <li style={{margin: '10px'}}>{data.place1}</li>
