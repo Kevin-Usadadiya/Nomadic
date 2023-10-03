@@ -505,3 +505,31 @@
     font-size: 0.7rem;
   }
 } 
+
+@media screen and (max-width:460px){
+  /* .proceed-form {
+      padding-bottom: 2em!important;
+      font-size: 0.4em;
+  } */
+  .both_radio{
+    font-size: 0.7em;
+    /* display: flex;
+    justify-content: space-evenly;
+    justify-content: center;
+    align-items: center; */
+  }
+  .both_radio > #text{
+    width: 40px;
+  }
+  .pdf_btn{
+    height: 40px;
+    width: 140px;
+  }
+  .form_btn{
+    height: 40px;
+    width: 140px;
+  }
+  .right-panel{
+      padding-top: 0em;
+  }
+}
