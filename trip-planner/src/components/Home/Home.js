@@ -65,7 +65,7 @@ function Home() {
                     <h1 className='card_title'>{item.title}</h1>
                     <p className='card_sub_title'><strong>{item.subtitle}</strong></p>
                     <p className='card_info'>{item.info}</p>
-                    <button className='card_btn'>Book Now</button>
+                    <button className='card_btn'><Link to="/form" style={{textDecoration:"none", color :"whitesmoke"}}>Book Now</Link></button>
                   </div>
                 </div>
               )
