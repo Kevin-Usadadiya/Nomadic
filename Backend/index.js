@@ -24,9 +24,7 @@ app.use(cors(
 app.use(express.json())
 
 
-// mongoose.connect("mongodb://127.0.0.1:27017/Trip-Planner")
-
-mongoose.connect("mongodb+srv://explorenomadictrips:SRKS2003@cluster0.lu4bqm2.mongodb.net/Trip-Planner?retryWrites=true&w=majority")
+mongoose.connect(process.env.MONGODB_URI)
 
 
 
