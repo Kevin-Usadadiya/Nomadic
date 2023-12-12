@@ -12,6 +12,7 @@ import SignUp from './components/RegistrationAndLogin/SignUp';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import Blog from './components/Blog/Blog';
 import Planner from './components/Planner/Planner';
+import PasswordReset from './components/PasswordReset/PasswordReset';
 
 export default function App() {
 
@@ -100,6 +101,15 @@ export default function App() {
             <Navbar/>
 
              <SignUp/>
+             <Footer/>
+           </>
+         }>
+       </Route>
+         <Route exact path='/pwreset' element={
+           <>
+            <Navbar/>
+
+             <PasswordReset/>
              <Footer/>
            </>
          }>

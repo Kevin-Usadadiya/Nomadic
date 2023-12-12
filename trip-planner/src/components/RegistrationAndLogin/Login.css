@@ -35,8 +35,18 @@
 
 .form_element > input{
     width: 350px;
-    font-size: 16px;
-    padding: 1em;
+    font-size: 20px;
+    padding: 0.7em;
+    border-radius: 0.5em;
+    
+}
+.form_element_input {
+    display: flex;
+}
+.form_element_input > input{
+    width: 350px;
+    font-size: 20px;
+    padding: 0.7em;
     border-radius: 0.5em;
     
 }
@@ -81,6 +91,13 @@
     padding:0.4em 0.9em;
     border-radius: 0.3em;
     color: whitesmoke;
+}
+
+#showicon{
+    width: 30px;
+    margin-left: -40px;
+    margin-top: 13px;
+    position:absolute;
 }
 
 
